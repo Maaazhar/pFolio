@@ -47,8 +47,12 @@ section{
     align-items: center;
     justify-content: space-between;
 }
+.about-line-break{
+    display: none;
+}
 .contact{
-    background: #111;
+    background: url("images/banner.jpg");
+    background-attachment: fixed;
     color: #fff;
     color:#dc143c, 83%, 47%)
 }
@@ -163,20 +167,47 @@ section .title::after{
     pointer-events: auto;
 }
 .scroll-up-btn:hover{
-    filter: brightness(90%);
+    background: #fff;
+    color: crimson;
 }
 
 
 /* home section styling */
 .home{
     display: flex;
-    background: url("images/banner.jpg") no-repeat center;
+    background: url("images/top-banner-bg1.jpg") no-repeat center;
     height: 100vh;
     color: #fff;
     min-height: 500px;
     background-size: cover;
     background-attachment: fixed;
     font-family: 'Ubuntu', sans-serif;
+}
+/* .home-link{
+    display: flex;
+    justify-content:space-around;
+    width: 380px;
+    background: none;
+    margin-top: -20px;
+
+}
+.home-link a{
+    display: inline-block;
+    background: none !important;
+    color: #fff !important;
+    font-size: 40px !important;
+    padding: none !important;
+    margin-top: none !important;
+    font-weight: 400;
+    border-radius: none !important;
+    border: none !important;
+    transition: all 0.3s ease;
+}
+.home-link a:hover{
+    color: crimson !important;
+} */
+.home-line-break{
+    display: none;
 }
 .home .max-width{
   width: 100%;
@@ -189,17 +220,7 @@ section .title::after{
     grid-column: 1/span 2;
     z-index: 2;
 }
-.home .banner-img{
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    margin-bottom: -1.5px;    
-    z-index: 1;
-}
-.home-content{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-}
+
 .home .home-content .text-1{
     font-size: 27px;
 }
@@ -280,28 +301,30 @@ section .title::after{
 /* project section styling */
 .project, .services{
     color:#fff;
-    background: #111;
+    background: url("images/banner.jpg");
+    background-attachment: fixed;
 }
 .feedback{
     color: #111;
     background: #fff;
 }
 .services .title::before,
-.project .title::before{
-    background: #fff;
+.project .title::before,
+.contact .title::before{
+    background: none;
 }
 .feedback .title::before{
     background: #111;
 }
 .services .title::after{
-    background: #111;
+    background: none;
     content: "what i do";
 }
 .blog .title::after{
     content: "what i think";  
 }
 .project .title::after{
-    background: #111;
+    background: none;
     content: "i've completed";
 }
 .services .serv-content .card{
@@ -414,6 +437,12 @@ section .title::after{
 }
 .skills .skills-content .right .bars{
     margin-bottom: 15px;
+    transition: all 0.3s ease;
+    padding: 5px 10px 10px 10px;
+    border-radius: 5px;
+}
+.skills .skills-content .right .bars:hover{
+    box-shadow: 5px 5px 25px crimson;
 }
 .skills .skills-content .right .info{
     display: flex;
@@ -481,7 +510,7 @@ section .title::after{
 
 /* feedback section styling */
 .feedback .title::after{
-    content: "what client says";
+    content: "what they said";
 }
 .feedback .carousel .card{
     background: #ddd;
@@ -549,14 +578,17 @@ section .title::after{
     justify-content:space-around;
 }
 .contact-icon i{
-    
+    font-size: 40px !important;  
 }
-.contact .title::before{
-    background: #fff;
+.contact-icon i:hover{
+    color: #fff;  
+}
+.contact-icon svg:hover{
+    fill: #fff;    
 }
 .contact .title::after{
     content: "get in touch";
-    background: #111;
+    background: none;
 }
 .contact .contact-content .column{
     width: calc(50% - 30px);
@@ -691,13 +723,13 @@ footer span a:hover{
     }
     .navbar .menu{
         position: fixed;
-        height: 100vh;
+        height: 58vh;
         width: 100%;
         left: -100%;
         top: 0;
-        background: #111;
+        background: #dc143cce;
         text-align: center;
-        padding-top: 80px;
+        margin-top: 71px;
         transition: all 0.3s ease;
     }
     .navbar .menu.active{
@@ -708,8 +740,8 @@ footer span a:hover{
     }
     .navbar .menu li a{
         display: inline-block;
-        margin: 20px 0;
-        font-size: 25px;
+        margin: 10px 0;
+        font-size: 22px;
     }
     .home .home-content .text-2{
         font-size: 70px;
@@ -760,6 +792,15 @@ footer span a:hover{
     .home .home-content a{
         font-size: 20px;
     }
+    .home-line-break, .about-line-break{
+        display: block;
+        margin-top: -15px;
+    }
+    .about-btn{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
     .services .serv-content .card,
     .project .project-content .card{
         width: 100%;
@@ -771,7 +812,17 @@ footer span a:hover{
         font-size: 50px;
     }
     .home .home-content .text-3{
-        font-size: 27px;
+        font-size: 25px;
+    }
+
+    .home-btn{
+        display:flex;
+        align-items: center;
+        justify-content:center;
+        flex-flow: row wrap;
+    }
+    .home-btn a{
+        font-size: 27px !important;
     }
     .about .about-content .right .text,
     .skills .skills-content .left .text{
